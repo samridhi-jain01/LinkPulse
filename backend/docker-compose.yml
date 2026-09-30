@@ -1,0 +1,22 @@
+
+
+services:
+  # PostgreSQL Database Container
+  postgres:
+    image: postgres:16-alpine
+    container_name: link_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: linkpulsedb 
+    ports:
+      - "5432:5432"
+
+  # Redis In-Memory Cache Container
+  redis:
+    image: redis:7-alpine
+    container_name: redis_db
+    restart: always
+    ports:
+      - "6379:6379"
